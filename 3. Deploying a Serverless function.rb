@@ -11,7 +11,9 @@ transform
 # Allow dynamic configuration of Lambda bucket name.
 # e.g.: export LAMBDA_BUCKET=my_bucket
 variable :lambda_bucket,
-         value: ENV["LAMBDA_BUCKET"]
+         default: "my-serverless-bucket",
+         value: ENV["LAMBDA_BUCKET"],
+         required: true
 
 # Create a Serverless Lambda function backed by API Gateway
 resource :my_serverless_function,
