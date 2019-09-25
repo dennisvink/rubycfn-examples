@@ -16,13 +16,13 @@ resource :my_example_s3_bucket,
 # Example 2
 resource :my_amazing_s3_bucket,
          type: "AWS::S3::Bucket" do |r|
-  r.property(:name) { "some-unique-bucket-name" }
+  r.property(:bucket_name) { "some-unique-bucket-name" }
 end
 
 # Example 3
 resource :my_outstanding_bucket,
          amount: 3,
-         type: "AWS::S3:Bucket"
+         type: "AWS::S3::Bucket"
 
 # Example 4
 output :example_1_bucket_name,
