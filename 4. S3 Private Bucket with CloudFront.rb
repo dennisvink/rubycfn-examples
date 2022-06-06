@@ -35,12 +35,7 @@ resource :my_bucket_policy,
           ],
           "Effect": "Allow",
           "Principal": {
-            "CanonicalUser": {
-              "Fn::GetAtt": [
-                "MyOriginAccessIdentity",
-                "S3CanonicalUserId"
-              ]
-            }
+            "CanonicalUser": :my_origin_access_identity.ref(:s3_canonical_user_id)
           },
           "Resource": [
             :my_bucket.ref(:arn),
